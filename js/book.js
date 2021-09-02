@@ -48,7 +48,7 @@ const showGetData = (books) => {
                     <h2 class="card-title text-success">Book: ${book.title}</h2>
                     <h3 class="text-secondary">Author: ${book.author_name ? book.author_name : "Not Available"}</h3>
                     <h4 class="text-secondary">Publisher: ${book.publisher ? book.publisher : "Not Available"}</h4>
-                    <h4 class="text-secondary">First published: ${book.first_publish_year}</h4>
+                    <h4 class="text-secondary">First published: ${book.first_publish_year ? book.first_publish_year : "Not Available"}</h4>
                 </div>
             </div>`
         showData.appendChild(div);
