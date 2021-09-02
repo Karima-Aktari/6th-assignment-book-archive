@@ -4,16 +4,19 @@ const showData = document.getElementById('show-data');
 const errorMessage = document.getElementById('error-message');
 const displayLength = document.getElementById('length');
 
-
+// Add click handler
 searchButton.addEventListener('click', function () {
     loadData();
     searchInput.value = "";
     displayLength.innerText = "";
+
 });
 
+// Loading data
 const loadData = () => {
     const searchText = searchInput.value;
     showData.innerHTML = "";
+    errorMessage.innerText = "";
     if (searchText === "") {
         errorMessage.innerText = "Search Field Can't Be Empty.";
         return;
@@ -26,19 +29,14 @@ const loadData = () => {
 
 // Showing data
 const showGetData = (books) => {
-    console.log(books);
-    console.log(displayLength.innerText);
-
     if (books.length === 0) {
         errorMessage.innerText = "NO Result Found";
         displayLength.innerText = `Length: ${books.length}`;
     } else {
-        errorMessage.innerText = "";
         displayLength.innerText = `Length: ${books.length}`;
     }
 
     const booksData = (books.splice(0, 20));
-    // console.log(booksData);
     booksData.forEach((book) => {
         console.log(book);
         const div = document.createElement('div');
